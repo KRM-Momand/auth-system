@@ -1,0 +1,206 @@
+/* ===========================
+   CHAT CONTAINER
+=========================== */
+
+.chat-container {
+    max-width: 700px;
+    height: 80vh;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0b93f6;
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.user-info p {
+    margin: 2px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ===========================
+   resMsg AREA
+=========================== */
+
+.chat-body {
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 20px;
+
+    background: #f5f7fb;
+}
+
+/* Hide scrollbar (optional) */
+
+.chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 20px;
+}
+
+/* ===========================
+   resMsg ALIGNMENT
+=========================== */
+
+.resMsg {
+    display: flex;
+    width: 100%;
+}
+
+.resMsg.other {
+    justify-content: flex-start;
+}
+
+.resMsg.own {
+    justify-content: flex-end;
+}
+
+/* ===========================
+   BUBBLES
+=========================== */
+
+.bubble {
+    max-width: 70%;
+
+    padding: 12px 16px;
+
+    border-radius: 18px;
+
+    word-break: break-word;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.resMsg.other .bubble {
+    background: white;
+    color: #222;
+
+    border-bottom-left-radius: 6px;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.resMsg.own .bubble {
+    background: #6c757d;
+    color: white;
+
+    border-bottom-right-radius: 6px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.chat-footer {
+    display: flex;
+    gap: 12px;
+
+    padding: 15px;
+
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.chat-footer input {
+    flex: 1;
+
+    padding: 12px 18px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 25px;
+
+    background: #f1f3f5;
+
+    font-size: 15px;
+}
+
+.chat-footer input:focus {
+    background: #ececec;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.chat-footer button {
+    border: none;
+
+    padding: 0 24px;
+
+    border-radius: 25px;
+
+    background: #6c757d;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.chat-footer button:hover {
+    background: #6c757d;
+}
+
+.chat-footer button:active {
+    transform: scale(.98);
+}
