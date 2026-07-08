@@ -19,7 +19,8 @@ function Messages() {
       const token = localStorage.getItem('token'); 
       try {
 
-        const res = await fetch(`http://localhost:3000/messages/get/${id}`, {
+        //const res = await fetch(`http://localhost:3000/messages/get/${id}`, {
+        const res = await fetch(`https://auth-system-vpih.onrender.com/messages/get/${id}`, {
           method: 'GET', 
           headers: {
             'authorization': `Bearer ${token}`
@@ -68,7 +69,8 @@ function Messages() {
     const token = localStorage.getItem('token'); 
 
     try {
-      const res = await fetch('http://localhost:3000/messages/send', {
+      //const res = await fetch('http://localhost:3000/messages/send', {
+      const res = await fetch('https://auth-system-vpih.onrender.com/messages/send', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json', 

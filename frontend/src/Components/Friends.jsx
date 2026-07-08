@@ -11,7 +11,8 @@ function Friends() {
   useEffect(() => {
     const getFriend = async () => {
       try {
-        const fetchFriends = await fetch('http://localhost:3000/friends/friendsList', {
+        //const fetchFriends = await fetch('http://localhost:3000/friends/friendsList', {
+        const fetchFriends = await fetch('https://auth-system-vpih.onrender.com/friends/friendsList', {
           method: 'GET', 
           headers: {
             'Content-Type': 'application/json',
@@ -32,7 +33,8 @@ function Friends() {
   const handleSendMsg = async () => {
 
     try {
-      const res =await fetch('http://localhost:3000/messages/send', {
+      //const res =await fetch('http://localhost:3000/messages/send', {
+      const res =await fetch('https://auth-system-vpih.onrender.com/messages/send', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',

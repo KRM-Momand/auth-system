@@ -13,7 +13,8 @@ function Dashboard() {
             const token = localStorage.getItem('token'); 
 
             try {
-                const res = await fetch('http://localhost:3000/auth/dashboard', {
+                // const res = await fetch('http://localhost:3000/auth/dashboard', {
+                const res = await fetch('https://auth-system-vpih.onrender.com/auth/dashboard', {
                     method: 'GET', 
                     headers: {'Authorization': `Bearer ${token}`}
                 })
