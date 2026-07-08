@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import Registration from './Registration'
+
 function Login() {
     const [data, setData] =useState({
         username: '', 
@@ -58,6 +60,8 @@ function Login() {
             <input type='text' value={data.password} name='password' placeholder='Please enter your password'  onChange={handlerChange}/>
             <button type='submit' > Log in </button> 
         </form>
+
+        <Registration /> 
       
     </section>
   )
