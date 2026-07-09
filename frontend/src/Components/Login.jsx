@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import '../../styles/login.css'; 
 
 import Registration from './Registration'
 
@@ -52,16 +55,21 @@ function Login() {
     }
 
   return (
-    <section>
-        <h1> Please enter Cridentials to login </h1>
-        <form onSubmit={handleLogin}>
+    <section className='login-page'>
+        <div className='login-card'>
+            <h1> Welcome Back </h1>
+            <p className='login-subtitle'> Sign in to continue</p>
+            <form onSubmit={handleLogin} className='login-form'>
 
-            <input type='text' value={data.username} name='username' placeholder='Please enter your username'  onChange={handlerChange}/> 
-            <input type='text' value={data.password} name='password' placeholder='Please enter your password'  onChange={handlerChange}/>
-            <button type='submit' > Log in </button> 
-        </form>
-
-        <Registration /> 
+                <input type='text' value={data.username} name='username' placeholder='Please enter your username'  onChange={handlerChange}/> 
+                <input type='text' value={data.password} name='password' placeholder='Please enter your password'  onChange={handlerChange}/>
+                <button type='submit' > Log in </button> 
+            </form>
+        <div className='login-switch my-5'>
+            <p> Don't have an Account? Register</p>
+            <Link to='/registration' className='switch-btn' > Create an Account </Link>
+        </div>
+        </div>
       
     </section>
   )

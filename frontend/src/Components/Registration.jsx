@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import '../../styles/register.css'; 
+import { Link } from 'react-router-dom';
 
 function Registration() {
 
@@ -43,15 +45,22 @@ function Registration() {
     }
 
   return (
-    <section>
-        <h1> Registration Form </h1>
-        <form onSubmit={submitHandler}>
+    <section className='register-page'>
+        <div className='register-card'>
 
-            <input type='text' placeholder='Please enter your name' name='username' value={data.username} onChange={dataHandler} /> 
-            <input type='text' placeholder='Please enter your password' name='password' value={data.password} onChange={dataHandler} /> 
+            <h1> Create Account </h1>
+            <form onSubmit={submitHandler} className='register-form'>
 
-            <button type='submit'> Submit </button>
-        </form>
+                <input type='text' placeholder='Please enter your name' name='username' value={data.username} onChange={dataHandler} /> 
+                <input type='text' placeholder='Please enter your password' name='password' value={data.password} onChange={dataHandler} /> 
+
+                <button type='submit'> Create an Account </button>
+            </form>
+        <div className='my-5 register-switch'>
+            <p> Already have an Account</p>
+            <Link to='/login' className='switch-btn' >Login</Link>
+        </div>
+        </div>
     </section>
   )
 }
