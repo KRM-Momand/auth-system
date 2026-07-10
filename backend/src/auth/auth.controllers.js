@@ -41,9 +41,9 @@ const login =async (req, res) => {
 const register = async (req, res) => {
     try {
 
-    const {username, password} = req.body;
+    const {username, password, name, email} = req.body;
 
-    if(!username || !password){
+    if(!username || !password || email || name){
         return res.status(400).json({
             message: 'Either username or password is invalid'
         })

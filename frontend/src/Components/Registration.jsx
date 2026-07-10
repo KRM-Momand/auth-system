@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 function Registration() {
 
     const [data, setData] = useState({
+        name: '', 
         username: '', 
         password: '', 
+        email: '', 
     }); 
 
     const dataHandler = (e) => {
@@ -28,9 +30,15 @@ function Registration() {
                 },
                 body: JSON.stringify({
                     username: data.username, 
-                    password: data.password
+                    password: data.password,
+                    name: data.name, 
+                    email: data.email
                 })
             }); 
+
+            if( !res.ok ){
+                alert(res.message); 
+            }
             const resData =await res.json(); 
             console.log(resData); 
 
@@ -51,8 +59,10 @@ function Registration() {
             <h1> Create Account </h1>
             <form onSubmit={submitHandler} className='register-form'>
 
-                <input type='text' placeholder='Please enter your name' name='username' value={data.username} onChange={dataHandler} /> 
-                <input type='text' placeholder='Please enter your password' name='password' value={data.password} onChange={dataHandler} /> 
+                <input type='text' placeholder='Please enter your name' name='password' value={data.name} onChange={dataHandler} /> 
+                <input type='text' placeholder='Please choose a username' name='username' value={data.username} onChange={dataHandler} /> 
+                <input type='password' placeholder='Please enter your password' name='password' value={data.password} onChange={dataHandler} /> 
+                <input type='email' placeholder='Please enter your email' name='password' value={data.email} onChange={dataHandler} /> 
 
                 <button type='submit'> Create an Account </button>
             </form>
