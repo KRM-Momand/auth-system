@@ -61,7 +61,7 @@ function Login() {
             <p className='login-subtitle'> Sign in to continue</p>
             <form onSubmit={handleLogin} className='login-form'>
 
-                <input type='text' value={data.username} name='username' placeholder='Please enter your username'  onChange={handlerChange}/> 
+                <input type='text' value={data.username} name='username' placeholder='Please enter your username or email'  onChange={handlerChange}/> 
                 <input type='text' value={data.password} name='password' placeholder='Please enter your password'  onChange={handlerChange}/>
                 <button type='submit' > Log in </button> 
             </form>

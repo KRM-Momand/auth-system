@@ -13,7 +13,7 @@ const login =async (req, res) => {
             message: 'Either username or password is invalid', 
         })
     }
-    const data = await pool.query(`SELECT * FROM users WHERE username = $1`, [username]);
+    const data = await pool.query(`SELECT * FROM users WHERE username = $1 OR email = $1`, [username]);
     if(data.rows.length === 0){
         return res.status(400).json({
             message: 'Username cannot be found!', 
@@ -43,15 +43,15 @@ const register = async (req, res) => {
 
     const {username, password, name, email} = req.body;
 
-    if(!username || !password || email || name){
+    if(!username || !password || !email || !name){
         return res.status(400).json({
             message: 'Either username or password is invalid'
         })
     }
 
     const hashedPassword = await bcrypt.hash(password, salted); 
-    await pool.query(`INSERT INTO users (username, password)
-        VALUES ($1, $2)`, [username, hashedPassword]); 
+    await pool.query(`INSERT INTO users (username, password, name, email)
+        VALUES ($1, $2, $3, $4)`, [username, hashedPassword, name, email]); 
 
     res.json({
         message: `user successfully registered as ${username}`,
